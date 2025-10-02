@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySqlConnector;
 
+
 namespace SistemaControleEstoque.DAO
 {
     public class CategoriaDAO

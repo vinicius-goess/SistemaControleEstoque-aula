@@ -23,6 +23,7 @@ namespace SistemaControleEstoque
         {
             ProdutoDAO dao = new ProdutoDAO();
             dgvProdutos.DataSource = dao.ObterTodos();
+            dgvProdutos.Columns["ID"].Visible = false;
         }
 
         private Produto GetSelecionado()

@@ -26,7 +26,7 @@ namespace SistemaControleEstoque.DAO
                     cmd1.ExecuteNonQuery();
 
                     // 2. Insere o registro na tabela de movimentação
-                    string sqlMov = @"INSERT INTO movimentacao (tipo, quantidade, preco, data_movimentacao, fk_produto_idproduto) 
+                    string sqlMov = @"INSERT INTO movimentacao (tipo, quantidade, preco, date, fk_produto_idproduto) 
                                     VALUES ('Saida', @qtd, @preco, NOW(), @id)";
                     var cmd2 = new MySqlCommand(sqlMov, conn, tx);
                     cmd2.Parameters.AddWithValue("@qtd", quantidade);
