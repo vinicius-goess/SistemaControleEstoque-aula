@@ -58,18 +58,18 @@ namespace SistemaControleEstoque
             }
         }
 
-       // private Random rnd = new Random();
+        private Random rnd = new Random();
 
         private void btnMostrar_MouseEnter(object sender, EventArgs e)
         {
             btnMostrar.BackColor = Color.Yellow;
-           // int maxX = this.ClientSize.Width - btnMostrar.Width;
-            //int maxY = this.ClientSize.Height - btnMostrar.Height;
+            int maxX = this.ClientSize.Width - btnMostrar.Width;
+          int maxY = this.ClientSize.Height - btnMostrar.Height;
 
-           // int newX = rnd.Next(0, maxX);
-            //int newY = rnd.Next(0, maxY);
+            int newX = rnd.Next(0, maxX);
+            int newY = rnd.Next(0, maxY);
 
-           // btnMostrar.Location = new Point(newX, newY);
+           btnMostrar.Location = new Point(newX, newY);
 
         }
 
