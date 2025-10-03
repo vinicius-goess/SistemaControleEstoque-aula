@@ -75,6 +75,8 @@ namespace SistemaControleEstoque
             // 
             // txtNome
             // 
+            this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNome.Location = new System.Drawing.Point(209, 74);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(234, 20);
@@ -82,6 +84,8 @@ namespace SistemaControleEstoque
             // 
             // txtPreco
             // 
+            this.txtPreco.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPreco.Location = new System.Drawing.Point(241, 240);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(234, 20);
@@ -89,6 +93,8 @@ namespace SistemaControleEstoque
             // 
             // nudQuantidade
             // 
+            this.nudQuantidade.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nudQuantidade.Location = new System.Drawing.Point(209, 152);
             this.nudQuantidade.Maximum = new decimal(new int[] {
             10000,
@@ -111,6 +117,8 @@ namespace SistemaControleEstoque
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(154, 314);
@@ -120,6 +128,7 @@ namespace SistemaControleEstoque
             // 
             // btnSalvar
             // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Location = new System.Drawing.Point(26, 359);
             this.btnSalvar.Name = "btnSalvar";
@@ -131,6 +140,7 @@ namespace SistemaControleEstoque
             // 
             // btnLimpar
             // 
+            this.btnLimpar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.Location = new System.Drawing.Point(182, 359);
             this.btnLimpar.Name = "btnLimpar";
@@ -142,6 +152,7 @@ namespace SistemaControleEstoque
             // 
             // btnVoltar
             // 
+            this.btnVoltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.Location = new System.Drawing.Point(335, 359);
             this.btnVoltar.Name = "btnVoltar";
