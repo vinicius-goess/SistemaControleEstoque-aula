@@ -49,12 +49,55 @@ namespace SistemaControleEstoque
             if(txtSenha.UseSystemPasswordChar)
             {
                 txtSenha.UseSystemPasswordChar = false;
+                btnMostrar.Text = "Ocultar";
             }
             else
             {
                 txtSenha.UseSystemPasswordChar = true;
+                btnMostrar.Text = "Mostrar";
             }
         }
+
+       // private Random rnd = new Random();
+
+        private void btnMostrar_MouseEnter(object sender, EventArgs e)
+        {
+            btnMostrar.BackColor = Color.Yellow;
+           // int maxX = this.ClientSize.Width - btnMostrar.Width;
+            //int maxY = this.ClientSize.Height - btnMostrar.Height;
+
+           // int newX = rnd.Next(0, maxX);
+            //int newY = rnd.Next(0, maxY);
+
+           // btnMostrar.Location = new Point(newX, newY);
+
         }
+
+        private void btnMostrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnMostrar.BackColor = SystemColors.Control;
+
+        }
+
+        private void btnEntrar_MouseEnter(object sender, EventArgs e)
+        {
+            btnEntrar.BackColor = Color.LightGreen;
+        }
+
+        private void btnEntrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnEntrar.BackColor = SystemColors.Control;
+        }
+
+        private void btnSair_MouseEnter(object sender, EventArgs e)
+        {
+            btnSair.BackColor = Color.Red;
+        }
+
+        private void btnSair_MouseLeave(object sender, EventArgs e)
+        {
+            btnSair.BackColor = SystemColors.Control;
+        }
+    }
     }
 

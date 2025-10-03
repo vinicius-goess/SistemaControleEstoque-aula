@@ -60,6 +60,8 @@ namespace SistemaControleEstoque
             // 
             // txtUsuario
             // 
+            this.txtUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsuario.Location = new System.Drawing.Point(151, 59);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(232, 20);
@@ -67,6 +69,8 @@ namespace SistemaControleEstoque
             // 
             // txtSenha
             // 
+            this.txtSenha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSenha.Location = new System.Drawing.Point(151, 112);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(232, 20);
@@ -75,6 +79,8 @@ namespace SistemaControleEstoque
             // 
             // btnEntrar
             // 
+            this.btnEntrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.Location = new System.Drawing.Point(40, 268);
             this.btnEntrar.Name = "btnEntrar";
@@ -83,9 +89,13 @@ namespace SistemaControleEstoque
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            this.btnEntrar.MouseEnter += new System.EventHandler(this.btnEntrar_MouseEnter);
+            this.btnEntrar.MouseLeave += new System.EventHandler(this.btnEntrar_MouseLeave);
             // 
             // btnSair
             // 
+            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.Location = new System.Drawing.Point(225, 268);
             this.btnSair.Name = "btnSair";
@@ -94,25 +104,30 @@ namespace SistemaControleEstoque
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            this.btnSair.MouseEnter += new System.EventHandler(this.btnSair_MouseEnter);
+            this.btnSair.MouseLeave += new System.EventHandler(this.btnSair_MouseLeave);
             // 
             // btnMostrar
             // 
+            this.btnMostrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrar.Location = new System.Drawing.Point(151, 138);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(189, 39);
             this.btnMostrar.TabIndex = 6;
-            this.btnMostrar.Text = "Mostrar Senha";
+            this.btnMostrar.Text = "Mostrar";
             this.btnMostrar.UseMnemonic = false;
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            this.btnMostrar.MouseEnter += new System.EventHandler(this.btnMostrar_MouseEnter);
+            this.btnMostrar.MouseLeave += new System.EventHandler(this.btnMostrar_MouseLeave);
             // 
             // FormLogin
             // 
             this.AcceptButton = this.btnEntrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 509);
+            this.ClientSize = new System.Drawing.Size(403, 417);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnEntrar);
