@@ -34,12 +34,13 @@ namespace SistemaControleEstoque
             this.btnSaida = new System.Windows.Forms.Button();
             this.btnListagem = new System.Windows.Forms.Button();
             this.btnCadastro = new System.Windows.Forms.Button();
+            this.btnCategoria = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSairMenu
             // 
             this.btnSairMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSairMenu.Location = new System.Drawing.Point(193, 371);
+            this.btnSairMenu.Location = new System.Drawing.Point(281, 366);
             this.btnSairMenu.Name = "btnSairMenu";
             this.btnSairMenu.Size = new System.Drawing.Size(122, 100);
             this.btnSairMenu.TabIndex = 9;
@@ -91,11 +92,23 @@ namespace SistemaControleEstoque
             this.btnCadastro.UseVisualStyleBackColor = true;
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
+            // btnCategoria
+            // 
+            this.btnCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategoria.Location = new System.Drawing.Point(94, 366);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(122, 100);
+            this.btnCategoria.TabIndex = 10;
+            this.btnCategoria.Text = "Atualizar Categorias";
+            this.btnCategoria.UseVisualStyleBackColor = true;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 551);
+            this.Controls.Add(this.btnCategoria);
             this.Controls.Add(this.btnSairMenu);
             this.Controls.Add(this.btnRelatorio);
             this.Controls.Add(this.btnSaida);
@@ -114,5 +127,6 @@ namespace SistemaControleEstoque
         private System.Windows.Forms.Button btnSaida;
         private System.Windows.Forms.Button btnListagem;
         private System.Windows.Forms.Button btnCadastro;
+        private System.Windows.Forms.Button btnCategoria;
     }
 }

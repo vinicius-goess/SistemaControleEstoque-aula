@@ -41,5 +41,11 @@ namespace SistemaControleEstoque
         {
             this.Close();
         }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            new FormCategorias().ShowDialog();
+
+        }
     }
 }

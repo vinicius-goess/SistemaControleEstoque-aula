@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaControleEstoque.DAO;
+using SistemaControleEstoque.Model;
 
 namespace SistemaControleEstoque
 {
