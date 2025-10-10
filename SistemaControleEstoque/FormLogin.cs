@@ -15,29 +15,42 @@ namespace SistemaControleEstoque
     {
         public FormLogin()
         {
-            InitializeComponent();
+        InitializeComponent();
+         //Theme.ApplyToForm(this);
+         txtSenha.UseSystemPasswordChar = true;
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            string user = txtUsuario.Text.Trim();
-            string pass = txtSenha.Text;
-
-            UsuarioDAO dao = new UsuarioDAO();
-            if (dao.ValidarLogin(user, pass))
-            {
-                this.Hide();
-                using (var menu = new FormMenu())
+                  string user = txtUsuario.Text.Trim();
+                 string pass = txtSenha.Text;
+     
+                 try
+                 {
+                     var dao = new UsuarioDAO();
+                     string nivelAcesso = dao.ValidarLogin(user, pass);
+     
+                     if (!string.IsNullOrEmpty(nivelAcesso))
+                     {
+                         this.Hide();
+                         // Criamos o FormMenu e exibimos como um diálogo.
+                         // O código para aqui até o FormMenu ser fechado.
+                         FormMenu formMenu = new FormMenu(user, nivelAcesso);
+                        formMenu.ShowDialog();
+     
+                         // Após o FormMenu ser fechado, a aplicação inteira é encerrada.
+                         this.Close();
+                     }
+                     else
+                     {
+                         MessageBox.Show("Usuário ou senha incorretos.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                 }
+                catch (Exception ex)
                 {
-                    menu.ShowDialog();
+                   MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                this.Close();
             }
-            else
-            {
-                MessageBox.Show("Usuário ou senha incorretos.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
@@ -97,6 +110,12 @@ namespace SistemaControleEstoque
         private void btnSair_MouseLeave(object sender, EventArgs e)
         {
             btnSair.BackColor = SystemColors.Control;
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            FormCadastroUsuario form = new FormCadastroUsuario();
+            form.ShowDialog();
         }
     }
     }

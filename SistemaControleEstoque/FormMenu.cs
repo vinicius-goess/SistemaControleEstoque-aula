@@ -12,9 +12,40 @@ namespace SistemaControleEstoque
 {
     public partial class FormMenu : Form
     {
-        public FormMenu()
+        private readonly string usuarioLogado;
+        private readonly string nivelAcesso;
+
+        public FormMenu(string usuario, string nivel)
         {
             InitializeComponent();
+            usuarioLogado = usuario;
+            nivelAcesso = nivel;
+
+            lblUsuario.Text = $"Usuário: {usuarioLogado} ({nivelAcesso})";
+            ConfigurarPermissoes();
+        }
+
+        private void ConfigurarPermissoes()
+        {
+            switch (nivelAcesso)
+            {
+                case "Usuario":
+                    btnCadastro.Enabled = false;
+                    btnListagem.Enabled = false;
+                    btnSaida.Enabled = false;
+                    btnUsuarios.Visible = false;
+                    btnCategoria.Enabled = false;
+                    break;
+
+                case "Gerente":
+                    btnUsuarios.Visible = false;
+                    break;
+
+                case "Administrador":
+                default:
+                    // Acesso total
+                    break;
+            }
         }
 
         private void btnCadastro_Click(object sender, EventArgs e)
@@ -46,6 +77,11 @@ namespace SistemaControleEstoque
         {
             new FormCategorias().ShowDialog();
 
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            new FormCadastroUsuario().ShowDialog();
         }
     }
 }

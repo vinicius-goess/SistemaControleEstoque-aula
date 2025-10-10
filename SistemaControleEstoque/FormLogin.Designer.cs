@@ -36,6 +36,7 @@ namespace SistemaControleEstoque
             this.btnEntrar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnMostrar = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -64,7 +65,7 @@ namespace SistemaControleEstoque
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsuario.Location = new System.Drawing.Point(151, 59);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(232, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(256, 20);
             this.txtUsuario.TabIndex = 2;
             // 
             // txtSenha
@@ -73,7 +74,7 @@ namespace SistemaControleEstoque
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSenha.Location = new System.Drawing.Point(151, 112);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(232, 20);
+            this.txtSenha.Size = new System.Drawing.Size(256, 20);
             this.txtSenha.TabIndex = 3;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
@@ -82,7 +83,7 @@ namespace SistemaControleEstoque
             this.btnEntrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrar.Location = new System.Drawing.Point(40, 268);
+            this.btnEntrar.Location = new System.Drawing.Point(12, 210);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(115, 89);
             this.btnEntrar.TabIndex = 4;
@@ -97,7 +98,7 @@ namespace SistemaControleEstoque
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(225, 268);
+            this.btnSair.Location = new System.Drawing.Point(292, 210);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(115, 89);
             this.btnSair.TabIndex = 5;
@@ -111,7 +112,7 @@ namespace SistemaControleEstoque
             // 
             this.btnMostrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrar.Location = new System.Drawing.Point(151, 138);
+            this.btnMostrar.Location = new System.Drawing.Point(218, 138);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(189, 39);
             this.btnMostrar.TabIndex = 6;
@@ -122,12 +123,26 @@ namespace SistemaControleEstoque
             this.btnMostrar.MouseEnter += new System.EventHandler(this.btnMostrar_MouseEnter);
             this.btnMostrar.MouseLeave += new System.EventHandler(this.btnMostrar_MouseLeave);
             // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(151, 210);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(115, 89);
+            this.btnCadastrar.TabIndex = 7;
+            this.btnCadastrar.Text = "Cadastrar novo usuário";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
             // FormLogin
             // 
             this.AcceptButton = this.btnEntrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 417);
+            this.ClientSize = new System.Drawing.Size(427, 400);
+            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnEntrar);
@@ -151,5 +166,6 @@ namespace SistemaControleEstoque
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnMostrar;
+        private System.Windows.Forms.Button btnCadastrar;
     }
 }
