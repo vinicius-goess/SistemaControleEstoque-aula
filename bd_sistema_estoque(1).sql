@@ -209,3 +209,11 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+USE bd_sistema_estoque;
+ 
+ALTER TABLE usuario 
+ADD COLUMN nivel ENUM('Administrador', 'Gerente', 'Usuario') DEFAULT 'Usuario';
+ 
+UPDATE usuario SET nivel = 'Administrador' WHERE login = 'adm';
