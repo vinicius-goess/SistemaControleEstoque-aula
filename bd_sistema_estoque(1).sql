@@ -217,3 +217,14 @@ ALTER TABLE usuario
 ADD COLUMN nivel ENUM('Administrador', 'Gerente', 'Usuario') DEFAULT 'Usuario';
  
 UPDATE usuario SET nivel = 'Administrador' WHERE login = 'adm';
+
+
+
+
+
+
+ALTER TABLE produto
+ADD COLUMN foto LONGBLOB NULL,
+ADD COLUMN localizacao_estoque VARCHAR(100) NULL,
+ADD COLUMN data_cadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN data_vencimento DATE NULL;
