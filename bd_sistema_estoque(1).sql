@@ -216,7 +216,7 @@ USE bd_sistema_estoque;
 ALTER TABLE usuario 
 ADD COLUMN nivel ENUM('Administrador', 'Gerente', 'Usuario') DEFAULT 'Usuario';
  
-UPDATE usuario SET nivel = 'Administrador' WHERE login = 'adm';
+UPDATE usuario SET nivel = 'Administrador' WHERE login = 'admin';
 
 
 
