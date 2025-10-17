@@ -40,7 +40,9 @@ namespace SistemaControleEstoque
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNome
@@ -79,7 +81,7 @@ namespace SistemaControleEstoque
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNome.Location = new System.Drawing.Point(209, 74);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(234, 20);
+            this.txtNome.Size = new System.Drawing.Size(543, 20);
             this.txtNome.TabIndex = 3;
             // 
             // txtPreco
@@ -88,7 +90,7 @@ namespace SistemaControleEstoque
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPreco.Location = new System.Drawing.Point(241, 240);
             this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(234, 20);
+            this.txtPreco.Size = new System.Drawing.Size(543, 20);
             this.txtPreco.TabIndex = 4;
             // 
             // nudQuantidade
@@ -102,7 +104,7 @@ namespace SistemaControleEstoque
             0,
             0});
             this.nudQuantidade.Name = "nudQuantidade";
-            this.nudQuantidade.Size = new System.Drawing.Size(234, 20);
+            this.nudQuantidade.Size = new System.Drawing.Size(543, 20);
             this.nudQuantidade.TabIndex = 5;
             // 
             // lblCategoria
@@ -123,14 +125,14 @@ namespace SistemaControleEstoque
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(154, 314);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(121, 21);
+            this.cmbCategoria.Size = new System.Drawing.Size(352, 21);
             this.cmbCategoria.TabIndex = 7;
             // 
             // btnSalvar
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(26, 359);
+            this.btnSalvar.Location = new System.Drawing.Point(12, 373);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(135, 98);
             this.btnSalvar.TabIndex = 8;
@@ -142,7 +144,7 @@ namespace SistemaControleEstoque
             // 
             this.btnLimpar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(182, 359);
+            this.btnLimpar.Location = new System.Drawing.Point(169, 373);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(135, 98);
             this.btnLimpar.TabIndex = 9;
@@ -154,7 +156,7 @@ namespace SistemaControleEstoque
             // 
             this.btnVoltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(335, 359);
+            this.btnVoltar.Location = new System.Drawing.Point(321, 373);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(135, 98);
             this.btnVoltar.TabIndex = 10;
@@ -162,11 +164,20 @@ namespace SistemaControleEstoque
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(520, 291);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(271, 203);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 492);
+            this.ClientSize = new System.Drawing.Size(803, 558);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnSalvar);
@@ -181,6 +192,7 @@ namespace SistemaControleEstoque
             this.Name = "FormCadastro";
             this.Text = "FormCadastro";
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +211,6 @@ namespace SistemaControleEstoque
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
