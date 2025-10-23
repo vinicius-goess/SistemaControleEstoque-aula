@@ -16,6 +16,8 @@ namespace SistemaControleEstoque
 {
     public partial class FormCadastro : Form
     {
+
+
         private Produto produtoEditando;
 
         public FormCadastro()

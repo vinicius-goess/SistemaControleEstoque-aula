@@ -31,7 +31,6 @@ namespace SistemaControleEstoque
             {
                 case "Usuario":
                     btnCadastro.Enabled = false;
-                    btnListagem.Enabled = false;
                     btnSaida.Enabled = false;
                     btnUsuarios.Visible = false;
                     btnCategoria.Enabled = false;

@@ -15,44 +15,49 @@ namespace SistemaControleEstoque
     {
         public FormLogin()
         {
-        InitializeComponent();
-         //Theme.ApplyToForm(this);
-         txtSenha.UseSystemPasswordChar = true;
+            InitializeComponent();
+            //Theme.ApplyToForm(this);
+            txtSenha.UseSystemPasswordChar = true;
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-                  string user = txtUsuario.Text.Trim();
-                 string pass = txtSenha.Text;
-     
-                 try
-                 {
-                     var dao = new UsuarioDAO();
-                     string nivelAcesso = dao.ValidarLogin(user, pass);
-     
-                     if (!string.IsNullOrEmpty(nivelAcesso))
-                     {
-                         this.Hide();
-                         // Criamos o FormMenu e exibimos como um diálogo.
-                         // O código para aqui até o FormMenu ser fechado.
-                         FormMenu formMenu = new FormMenu(user, nivelAcesso);
-                        formMenu.ShowDialog();
-     
-                         // Após o FormMenu ser fechado, a aplicação inteira é encerrada.
-                         this.Close();
-                     }
-                     else
-                     {
-                         MessageBox.Show("Usuário ou senha incorretos.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                 }
-                catch (Exception ex)
+            string user = txtUsuario.Text.Trim();
+            string pass = txtSenha.Text;
+
+            try
+            {
+                UsuarioDAO dao = new UsuarioDAO();
+                string nivelAcesso = dao.ValidarLogin(user, pass);
+
+                if (!string.IsNullOrEmpty(nivelAcesso))
                 {
-                   MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Hide();
+                    // Criamos o FormMenu e exibimos como um diálogo.
+                    // O código para aqui até o FormMenu ser fechado.
+                    FormMenu formMenu = new FormMenu(user, nivelAcesso);
+                    formMenu.ShowDialog();
+
+                    // Após o FormMenu ser fechado, a aplicação inteira é encerrada.
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuário ou senha incorretos.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+            catch (Exception ex)
+            {
+                //Logger.LogException(ex, "Erro ao autenticar usuário", user);
+                MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message,
+                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    
 
-        private void btnSair_Click(object sender, EventArgs e)
+
+
+    private void btnSair_Click(object sender, EventArgs e)
         {
             { Application.Exit(); }
         }

@@ -12,17 +12,61 @@ using SistemaControleEstoque.DAO;
     namespace SistemaControleEstoque
     {
         public partial class FormCadastroUsuario : Form
+    {
+         
+        private readonly string nivelUsuarioAtual;
+
+        public FormCadastroUsuario() : this(string.Empty) { }
+
+        public FormCadastroUsuario(string nivelUsuario)
         {
-            public FormCadastroUsuario()
+            InitializeComponent();
+            nivelUsuarioAtual = nivelUsuario ?? string.Empty;
+
+            try
             {
-                InitializeComponent();
-                cmbNivel.Items.Add("Usuario");
-                cmbNivel.Items.Add("Administrador");
-                cmbNivel.Items.Add("Gerente");
-                cmbNivel.SelectedIndex = 0;
+                UsuarioDAO dao = new UsuarioDAO();
+                var niveis = dao.ObterNiveis();
+                if (niveis != null && niveis.Count > 0)
+                {
+                    cmbNivel.Items.AddRange(niveis.ToArray());
+                }
+                else
+                {
+                    cmbNivel.Items.AddRange(new object[] { "Usuario", "Administrador" });
+                }
+            }
+            catch (Exception ex)
+            {
+                cmbNivel.Items.AddRange(new object[] { "Usuario", "Administrador" });
+                MessageBox.Show("Não foi possível carregar os níveis do banco de dados: " + ex.Message,
+                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            private void btnMostrar_Click(object sender, EventArgs e)
+            // Controle de acesso ao nível
+            if (string.Equals(nivelUsuarioAtual, "Administrador", StringComparison.OrdinalIgnoreCase))
+            {
+                cmbNivel.Enabled = true;
+                var item = cmbNivel.Items.Cast<object>()
+                    .FirstOrDefault(i => string.Equals(i.ToString(), "Usuario", StringComparison.OrdinalIgnoreCase));
+                if (item != null)
+                    cmbNivel.SelectedItem = item;
+                else if (cmbNivel.Items.Count > 0)
+                    cmbNivel.SelectedIndex = 0;
+            }
+            else
+            {
+                cmbNivel.Enabled = false;
+                var item = cmbNivel.Items.Cast<object>()
+                    .FirstOrDefault(i => string.Equals(i.ToString(), "Usuario", StringComparison.OrdinalIgnoreCase));
+                if (item != null)
+                    cmbNivel.SelectedItem = item;
+                else if (cmbNivel.Items.Count > 0)
+                    cmbNivel.SelectedIndex = 0;
+            }
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
         {
             if (txtSenha.UseSystemPasswordChar)
             {
@@ -52,7 +96,7 @@ using SistemaControleEstoque.DAO;
             string nome = txtNome.Text.Trim();
             string login = txtLogin.Text.Trim();
             string senha = txtSenha.Text.Trim();
-            string nivel = cmbNivel.SelectedItem.ToString();
+            string nivel = cmbNivel.SelectedItem != null ? cmbNivel.SelectedItem.ToString() : string.Empty;
 
             if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(login) || string.IsNullOrEmpty(senha))
             {
@@ -60,9 +104,9 @@ using SistemaControleEstoque.DAO;
                 return;
             }
 
-            UsuarioDAO dao = new UsuarioDAO();
             try
             {
+                UsuarioDAO dao = new UsuarioDAO();
                 dao.CadastrarUsuario(nome, login, senha, nivel);
                 MessageBox.Show("Usuário cadastrado com sucesso!");
                 this.Close();
