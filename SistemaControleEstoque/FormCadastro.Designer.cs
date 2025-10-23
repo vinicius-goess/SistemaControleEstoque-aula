@@ -40,9 +40,16 @@ namespace SistemaControleEstoque
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picFotoProduto = new System.Windows.Forms.PictureBox();
+            this.btnSelecionarFoto = new System.Windows.Forms.Button();
+            this.btnRemoverFoto = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtLocalizacao = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpVencimento = new System.Windows.Forms.DateTimePicker();
+            this.chkSemVencimento = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFotoProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNome
@@ -90,7 +97,7 @@ namespace SistemaControleEstoque
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPreco.Location = new System.Drawing.Point(241, 240);
             this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(543, 20);
+            this.txtPreco.Size = new System.Drawing.Size(265, 20);
             this.txtPreco.TabIndex = 4;
             // 
             // nudQuantidade
@@ -104,7 +111,7 @@ namespace SistemaControleEstoque
             0,
             0});
             this.nudQuantidade.Name = "nudQuantidade";
-            this.nudQuantidade.Size = new System.Drawing.Size(543, 20);
+            this.nudQuantidade.Size = new System.Drawing.Size(187, 20);
             this.nudQuantidade.TabIndex = 5;
             // 
             // lblCategoria
@@ -132,7 +139,7 @@ namespace SistemaControleEstoque
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(12, 373);
+            this.btnSalvar.Location = new System.Drawing.Point(-2, 686);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(135, 98);
             this.btnSalvar.TabIndex = 8;
@@ -144,7 +151,7 @@ namespace SistemaControleEstoque
             // 
             this.btnLimpar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(169, 373);
+            this.btnLimpar.Location = new System.Drawing.Point(154, 686);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(135, 98);
             this.btnLimpar.TabIndex = 9;
@@ -156,7 +163,7 @@ namespace SistemaControleEstoque
             // 
             this.btnVoltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(321, 373);
+            this.btnVoltar.Location = new System.Drawing.Point(306, 686);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(135, 98);
             this.btnVoltar.TabIndex = 10;
@@ -164,20 +171,102 @@ namespace SistemaControleEstoque
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // pictureBox1
+            // picFotoProduto
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(520, 291);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 203);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.picFotoProduto.Location = new System.Drawing.Point(520, 291);
+            this.picFotoProduto.Name = "picFotoProduto";
+            this.picFotoProduto.Size = new System.Drawing.Size(271, 203);
+            this.picFotoProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFotoProduto.TabIndex = 11;
+            this.picFotoProduto.TabStop = false;
+            // 
+            // btnSelecionarFoto
+            // 
+            this.btnSelecionarFoto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSelecionarFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecionarFoto.Location = new System.Drawing.Point(520, 515);
+            this.btnSelecionarFoto.Name = "btnSelecionarFoto";
+            this.btnSelecionarFoto.Size = new System.Drawing.Size(135, 98);
+            this.btnSelecionarFoto.TabIndex = 12;
+            this.btnSelecionarFoto.Text = "Selecionar Foto";
+            this.btnSelecionarFoto.UseVisualStyleBackColor = true;
+            this.btnSelecionarFoto.Click += new System.EventHandler(this.btnSelecionarFoto_Click);
+            // 
+            // btnRemoverFoto
+            // 
+            this.btnRemoverFoto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnRemoverFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoverFoto.Location = new System.Drawing.Point(661, 515);
+            this.btnRemoverFoto.Name = "btnRemoverFoto";
+            this.btnRemoverFoto.Size = new System.Drawing.Size(135, 98);
+            this.btnRemoverFoto.TabIndex = 13;
+            this.btnRemoverFoto.Text = "Remover Foto";
+            this.btnRemoverFoto.UseVisualStyleBackColor = true;
+            this.btnRemoverFoto.Click += new System.EventHandler(this.btnRemoverFoto_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 378);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(239, 24);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Localização no Estoque:";
+            // 
+            // txtLocalizacao
+            // 
+            this.txtLocalizacao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLocalizacao.Location = new System.Drawing.Point(267, 382);
+            this.txtLocalizacao.Name = "txtLocalizacao";
+            this.txtLocalizacao.Size = new System.Drawing.Size(214, 20);
+            this.txtLocalizacao.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(22, 434);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(205, 24);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Data de Vencimento:";
+            // 
+            // dtpVencimento
+            // 
+            this.dtpVencimento.Location = new System.Drawing.Point(241, 437);
+            this.dtpVencimento.Name = "dtpVencimento";
+            this.dtpVencimento.Size = new System.Drawing.Size(200, 20);
+            this.dtpVencimento.TabIndex = 17;
+            // 
+            // chkSemVencimento
+            // 
+            this.chkSemVencimento.AutoSize = true;
+            this.chkSemVencimento.Checked = true;
+            this.chkSemVencimento.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkSemVencimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSemVencimento.Location = new System.Drawing.Point(241, 463);
+            this.chkSemVencimento.Name = "chkSemVencimento";
+            this.chkSemVencimento.Size = new System.Drawing.Size(248, 28);
+            this.chkSemVencimento.TabIndex = 18;
+            this.chkSemVencimento.Text = "Não possui vencimento";
+            this.chkSemVencimento.UseVisualStyleBackColor = true;
+            this.chkSemVencimento.CheckedChanged += new System.EventHandler(this.chkSemVencimento_CheckedChanged);
             // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 558);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(803, 796);
+            this.Controls.Add(this.chkSemVencimento);
+            this.Controls.Add(this.dtpVencimento);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtLocalizacao);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnRemoverFoto);
+            this.Controls.Add(this.btnSelecionarFoto);
+            this.Controls.Add(this.picFotoProduto);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnSalvar);
@@ -192,7 +281,7 @@ namespace SistemaControleEstoque
             this.Name = "FormCadastro";
             this.Text = "FormCadastro";
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFotoProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,6 +300,13 @@ namespace SistemaControleEstoque
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picFotoProduto;
+        private System.Windows.Forms.Button btnSelecionarFoto;
+        private System.Windows.Forms.Button btnRemoverFoto;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtLocalizacao;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpVencimento;
+        private System.Windows.Forms.CheckBox chkSemVencimento;
     }
 }

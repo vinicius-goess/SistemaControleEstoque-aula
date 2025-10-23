@@ -1,14 +1,16 @@
-﻿using System;
+﻿using SistemaControleEstoque.DAO;
+using SistemaControleEstoque.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SistemaControleEstoque.DAO;
-using SistemaControleEstoque.Model;
+
 
 namespace SistemaControleEstoque
 {
@@ -35,13 +37,34 @@ namespace SistemaControleEstoque
             cmbCategoria.DataSource = dao.ObterCategorias();
         }
 
-        private void CarregarProdutoParaEdicao()
+private void CarregarProdutoParaEdicao()
         {
             txtNome.Text = produtoEditando.Nome;
             nudQuantidade.Value = produtoEditando.Quantidade;
             txtPreco.Text = produtoEditando.Preco.ToString("F2");
             cmbCategoria.SelectedItem = produtoEditando.Categoria;
+            txtLocalizacao.Text = produtoEditando.LocalizacaoEstoque;
+
+            if (produtoEditando.DataVencimento.HasValue)
+            {
+                chkSemVencimento.Checked = false;
+                dtpVencimento.Value = produtoEditando.DataVencimento.Value;
+            }
+            else
+            {
+                chkSemVencimento.Checked = true;
+            }
+
+            if (produtoEditando.Foto != null)
+            {
+                fotoBytes = produtoEditando.Foto;
+                using (MemoryStream ms = new MemoryStream(fotoBytes))
+                {
+                    picFotoProduto.Image = Image.FromStream(ms);
+                }
+            }
         }
+
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -61,9 +84,13 @@ namespace SistemaControleEstoque
             {
                 Nome = txtNome.Text.Trim(),
                 Quantidade = (int)nudQuantidade.Value,
-                Preco = preco,
-                Categoria = cmbCategoria.SelectedItem.ToString()
+                Preco = Convert.ToDecimal(txtPreco.Text),
+                Categoria = cmbCategoria.SelectedItem.ToString(),
+                Foto = this.fotoBytes,
+                LocalizacaoEstoque = txtLocalizacao.Text.Trim(),
+                DataVencimento = chkSemVencimento.Checked ? (DateTime?)null : dtpVencimento.Value
             };
+
 
             ProdutoDAO dao = new ProdutoDAO();
             // O ID da categoria é o índice + 1 (pois o ID no banco começa em 1)
@@ -107,6 +134,37 @@ namespace SistemaControleEstoque
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void chkSemVencimento_CheckedChanged(object sender, EventArgs e)
+        {
+            dtpVencimento.Enabled = !chkSemVencimento.Checked;
+        }
+
+
+        private byte[] fotoBytes;
+        private void btnSelecionarFoto_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Imagens|*.jpg;*.jpeg;*.png";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    fotoBytes = File.ReadAllBytes(ofd.FileName);
+                    using (MemoryStream ms = new MemoryStream(fotoBytes))
+                    {
+                        picFotoProduto.Image = Image.FromStream(ms);
+                    }
+                }
+            }
+
+        }
+
+        private void btnRemoverFoto_Click(object sender, EventArgs e)
+        {
+            picFotoProduto.Image = null;
+            fotoBytes = null;
+
         }
     }
 }
