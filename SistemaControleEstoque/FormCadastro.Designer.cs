@@ -48,6 +48,8 @@ namespace SistemaControleEstoque
             this.label2 = new System.Windows.Forms.Label();
             this.dtpVencimento = new System.Windows.Forms.DateTimePicker();
             this.chkSemVencimento = new System.Windows.Forms.CheckBox();
+            this.lblDescricao = new System.Windows.Forms.Label();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFotoProduto)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +68,7 @@ namespace SistemaControleEstoque
             // 
             this.lblQuantidade.AutoSize = true;
             this.lblQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantidade.Location = new System.Drawing.Point(22, 152);
+            this.lblQuantidade.Location = new System.Drawing.Point(19, 183);
             this.lblQuantidade.Name = "lblQuantidade";
             this.lblQuantidade.Size = new System.Drawing.Size(184, 24);
             this.lblQuantidade.TabIndex = 1;
@@ -104,7 +106,7 @@ namespace SistemaControleEstoque
             // 
             this.nudQuantidade.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudQuantidade.Location = new System.Drawing.Point(209, 152);
+            this.nudQuantidade.Location = new System.Drawing.Point(209, 187);
             this.nudQuantidade.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -254,11 +256,32 @@ namespace SistemaControleEstoque
             this.chkSemVencimento.UseVisualStyleBackColor = true;
             this.chkSemVencimento.CheckedChanged += new System.EventHandler(this.chkSemVencimento_CheckedChanged);
             // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricao.Location = new System.Drawing.Point(19, 122);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(115, 24);
+            this.lblDescricao.TabIndex = 19;
+            this.lblDescricao.Text = "Descrição :";
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDescricao.Location = new System.Drawing.Point(140, 126);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(612, 20);
+            this.txtDescricao.TabIndex = 20;
+            // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 796);
+            this.Controls.Add(this.txtDescricao);
+            this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.chkSemVencimento);
             this.Controls.Add(this.dtpVencimento);
             this.Controls.Add(this.label2);
@@ -308,5 +331,7 @@ namespace SistemaControleEstoque
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpVencimento;
         private System.Windows.Forms.CheckBox chkSemVencimento;
+        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.TextBox txtDescricao;
     }
 }

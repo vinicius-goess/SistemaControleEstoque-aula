@@ -40,6 +40,7 @@ namespace SistemaControleEstoque
 private void CarregarProdutoParaEdicao()
         {
             txtNome.Text = produtoEditando.Nome;
+            txtDescricao.Text = produtoEditando.Descricao;
             nudQuantidade.Value = produtoEditando.Quantidade;
             txtPreco.Text = produtoEditando.Preco.ToString("F2");
             cmbCategoria.SelectedItem = produtoEditando.Categoria;
@@ -74,6 +75,12 @@ private void CarregarProdutoParaEdicao()
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(txtDescricao.Text) || cmbCategoria.SelectedItem == null)
+            {
+                MessageBox.Show("Preencha todos os campos obrigatórios.");
+                return;
+            }
+
             if (!decimal.TryParse(txtPreco.Text, out decimal preco))
             {
                 MessageBox.Show("Preço inválido.");
@@ -83,6 +90,7 @@ private void CarregarProdutoParaEdicao()
             var p = new Produto
             {
                 Nome = txtNome.Text.Trim(),
+                Descricao = txtDescricao.Text.Trim(),
                 Quantidade = (int)nudQuantidade.Value,
                 Preco = Convert.ToDecimal(txtPreco.Text),
                 Categoria = cmbCategoria.SelectedItem.ToString(),
@@ -121,6 +129,7 @@ private void CarregarProdutoParaEdicao()
         private void LimparCampos()
         {
             txtNome.Clear();
+            txtDescricao.Clear();
             nudQuantidade.Value = 1;
             txtPreco.Clear();
             if (cmbCategoria.Items.Count > 0) cmbCategoria.SelectedIndex = 0;
@@ -166,5 +175,6 @@ private void CarregarProdutoParaEdicao()
             fotoBytes = null;
 
         }
+
     }
 }
