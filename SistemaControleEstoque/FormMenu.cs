@@ -90,5 +90,7 @@ namespace SistemaControleEstoque
             FormCategorias frm = new FormCategorias();
             frm.ShowDialog();
         }
+
+     
     }
 }
