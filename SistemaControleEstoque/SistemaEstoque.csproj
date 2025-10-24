@@ -108,6 +108,7 @@
     <Compile Include="FormListagem.Designer.cs">
       <DependentUpon>FormListagem.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormListagemUsuario.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +183,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Util\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

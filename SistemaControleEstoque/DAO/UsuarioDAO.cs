@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySqlConnector;
-using System.Windows.Forms;
+//using SistemaControleEstoque.Util;
 
 namespace SistemaControleEstoque.DAO
 {
@@ -44,7 +41,7 @@ namespace SistemaControleEstoque.DAO
                     int exists = Convert.ToInt32(cmdCheck.ExecuteScalar());
                     if (exists > 0)
                     {
-                       // Logger.LogError("Erro no cadastro de usuário", "Usuário tentou criar um login que já está em uso.");
+                        //Logger.LogError("Erro no cadastro de usuário", "Usuário tentou criar um login que já está em uso.");
                         throw new Exception("Este login já está em uso.");
                     }
                 }

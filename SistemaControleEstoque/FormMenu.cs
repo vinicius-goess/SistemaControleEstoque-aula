@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaControleEstoque
@@ -21,12 +14,14 @@ namespace SistemaControleEstoque
             usuarioLogado = usuario;
             nivelAcesso = nivel;
 
-            lblUsuario.Text = $"Usuário: {usuarioLogado} ({nivelAcesso})";
+            lblUsuario.Text = "Usuário: " + usuarioLogado;
+            lblUsNivel.Text = "Nível de acesso: " + nivelAcesso;
             ConfigurarPermissoes();
         }
 
         private void ConfigurarPermissoes()
         {
+            // Controle de permissões baseado em nível
             switch (nivelAcesso)
             {
                 case "Usuario":
@@ -49,22 +44,40 @@ namespace SistemaControleEstoque
 
         private void btnCadastro_Click(object sender, EventArgs e)
         {
-            new FormCadastro().ShowDialog();
+            FormCadastro form = new FormCadastro();
+            form.ShowDialog();
         }
 
         private void btnListagem_Click(object sender, EventArgs e)
         {
-            new FormListagem().ShowDialog();
+            if (nivelAcesso == "Administrador")
+            {
+                FormListagem frm = new FormListagem(nivelAcesso);
+                frm.ShowDialog();
+            }
+            else
+            {
+                FormListagemUsuario frmUser = new FormListagemUsuario();
+                frmUser.ShowDialog();
+            }
         }
 
         private void btnSaida_Click(object sender, EventArgs e)
         {
-            new FormSaida().ShowDialog();
+            FormSaida frm = new FormSaida();
+            frm.ShowDialog();
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
-            new FormRelatorio().ShowDialog();
+            FormRelatorio frm = new FormRelatorio(nivelAcesso);
+            frm.ShowDialog();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FormCadastroUsuario frm = new FormCadastroUsuario(nivelAcesso);
+            frm.ShowDialog();
         }
 
         private void btnSairMenu_Click(object sender, EventArgs e)
@@ -72,15 +85,10 @@ namespace SistemaControleEstoque
             this.Close();
         }
 
-        private void btnCategoria_Click(object sender, EventArgs e)
+        private void btnCategorias_Click(object sender, EventArgs e)
         {
-            new FormCategorias().ShowDialog();
-
-        }
-
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            new FormCadastroUsuario().ShowDialog();
+            FormCategorias frm = new FormCategorias();
+            frm.ShowDialog();
         }
     }
 }

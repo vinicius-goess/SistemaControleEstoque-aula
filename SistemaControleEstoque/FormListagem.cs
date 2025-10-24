@@ -15,7 +15,7 @@ namespace SistemaControleEstoque
 {
     public partial class FormListagem : Form
     {
-        public FormListagem()
+        public FormListagem(string nivelAcesso)
         {
             InitializeComponent();
             AtualizarGrid();

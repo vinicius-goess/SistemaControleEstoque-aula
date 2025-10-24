@@ -14,7 +14,7 @@ namespace SistemaControleEstoque
 {
     public partial class FormRelatorio : Form
     {
-        public FormRelatorio()
+        public FormRelatorio(string nivelAcesso)
         {
             InitializeComponent();
             GerarRelatorio();

@@ -37,6 +37,7 @@ namespace SistemaControleEstoque
             this.btnCategoria = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblUsNivel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSairMenu
@@ -103,8 +104,7 @@ namespace SistemaControleEstoque
             this.btnCategoria.TabIndex = 10;
             this.btnCategoria.Text = "Atualizar Categorias";
             this.btnCategoria.UseVisualStyleBackColor = true;
-            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
-            // 
+             // 
             // btnUsuarios
             // 
             this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,11 +124,20 @@ namespace SistemaControleEstoque
             this.lblUsuario.Size = new System.Drawing.Size(0, 13);
             this.lblUsuario.TabIndex = 12;
             // 
+            // lblUsNivel
+            // 
+            this.lblUsNivel.AutoSize = true;
+            this.lblUsNivel.Location = new System.Drawing.Point(345, 355);
+            this.lblUsNivel.Name = "lblUsNivel";
+            this.lblUsNivel.Size = new System.Drawing.Size(0, 13);
+            this.lblUsNivel.TabIndex = 13;
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 403);
+            this.Controls.Add(this.lblUsNivel);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnCategoria);
@@ -154,5 +163,6 @@ namespace SistemaControleEstoque
         private System.Windows.Forms.Button btnCategoria;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblUsNivel;
     }
 }

@@ -146,8 +146,7 @@ namespace SistemaControleEstoque
             this.btnMostrar.UseMnemonic = false;
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
-            this.btnMostrar.MouseEnter += new System.EventHandler(this.btnMostrar_MouseEnter);
-            this.btnMostrar.MouseLeave += new System.EventHandler(this.btnMostrar_MouseLeave);
+
             // 
             // FormCadastroUsuario
             // 
