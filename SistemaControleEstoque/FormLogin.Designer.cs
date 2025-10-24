@@ -90,6 +90,8 @@ namespace SistemaControleEstoque
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            this.btnEntrar.MouseEnter += new System.EventHandler(this.btnEntrar_MouseEnter);
+            this.btnEntrar.MouseLeave += new System.EventHandler(this.btnEntrar_MouseLeave);
             // 
             // btnSair
             // 

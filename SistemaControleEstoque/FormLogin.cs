@@ -78,6 +78,8 @@ namespace SistemaControleEstoque
     }
 
 
+
+
         private void btnSair_Click(object sender, EventArgs e)
 
         {
@@ -160,6 +162,15 @@ namespace SistemaControleEstoque
 
         }
 
+        private void btnEntrar_MouseEnter(object sender, EventArgs e)
+        {
+            btnEntrar.BackColor = Color.FromArgb(255, 160, 217, 208);
+        }
+
+        private void btnEntrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnEntrar.BackColor = SystemColors.Control;
+        }
     }
 
 }
