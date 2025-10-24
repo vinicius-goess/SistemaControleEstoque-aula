@@ -6,6 +6,8 @@ using System.Drawing;
 
 using System.Windows.Forms;
 
+using SistemaControleEstoque.Util;
+
 //using SistemaControleEstoque.Util;
 
 
@@ -33,58 +35,47 @@ namespace SistemaControleEstoque
         {
 
             string user = txtUsuario.Text.Trim();
-
             string pass = txtSenha.Text;
 
-
             try
-
             {
-
-                UsuarioDAO dao = new UsuarioDAO();
-
+                var dao = new UsuarioDAO();
+                // Chamamos o método corrigido, que não precisa mais do parâmetro 'nivel'.
                 string nivelAcesso = dao.ValidarLogin(user, pass);
 
-
+                // Verificamos se o nível de acesso retornado NÃO é nulo ou vazio.
                 if (!string.IsNullOrEmpty(nivelAcesso))
-
                 {
-
-                    this.Hide();
-
-                    FormMenu menu = new FormMenu(user, nivelAcesso);
-
-                    menu.ShowDialog();
-
-                    this.Close();
-
+                    // Se o login for válido, abrimos o FormMenu passando o usuário e o nível
+                    // de acesso que veio DIRETAMENTE do banco de dados.
+                    this.Hide(); // Opcional: esconde a tela de login
+                    new FormMenu(user, nivelAcesso).ShowDialog();
+                    this.Close(); // Fecha a aplicação ao fechar o menu.
                 }
-
                 else
+                { // Erro de autenticação feito pelo usuario
 
-                {
+                    // Registra tentativa de login inválida como erro (não exceção)
 
-                    MessageBox.Show("Usuário ou senha incorretos.", "Atenção",
+                    Logger.LogError("Login inválido", $"Usuário: {user} tentou autenticar com credenciais inválidas.");
 
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    MessageBox.Show("Usuário ou senha incorretos.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
 
-            }
 
+            }
             catch (Exception ex)
-
             {
-
-                //Logger.LogException(ex, "Erro ao autenticar usuário", user);
-
-                MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message,
-
-                "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                // --- PONTO DE INTEGRAÇÃO ---
+                // Log centralizado com contexto do usuário que tentou autenticar
+                Logger.LogException(ex, "Erro ao autenticar usuário", user);
+                MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
+
+    }
 
 
         private void btnSair_Click(object sender, EventArgs e)

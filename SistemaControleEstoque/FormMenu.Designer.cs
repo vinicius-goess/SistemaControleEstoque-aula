@@ -38,14 +38,18 @@ namespace SistemaControleEstoque
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblUsNivel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSairMenu
             // 
+            this.btnSairMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSairMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSairMenu.Location = new System.Drawing.Point(200, 274);
+            this.btnSairMenu.Location = new System.Drawing.Point(0, 97);
             this.btnSairMenu.Name = "btnSairMenu";
-            this.btnSairMenu.Size = new System.Drawing.Size(122, 100);
+            this.btnSairMenu.Size = new System.Drawing.Size(197, 62);
             this.btnSairMenu.TabIndex = 9;
             this.btnSairMenu.Text = "Sair do Sistema";
             this.btnSairMenu.UseVisualStyleBackColor = true;
@@ -53,10 +57,11 @@ namespace SistemaControleEstoque
             // 
             // btnRelatorio
             // 
+            this.btnRelatorio.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRelatorio.Location = new System.Drawing.Point(349, 26);
+            this.btnRelatorio.Location = new System.Drawing.Point(0, 225);
             this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(122, 100);
+            this.btnRelatorio.Size = new System.Drawing.Size(197, 63);
             this.btnRelatorio.TabIndex = 8;
             this.btnRelatorio.Text = "Visualizar Relatórios";
             this.btnRelatorio.UseVisualStyleBackColor = true;
@@ -64,10 +69,11 @@ namespace SistemaControleEstoque
             // 
             // btnSaida
             // 
+            this.btnSaida.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaida.Location = new System.Drawing.Point(33, 153);
+            this.btnSaida.Location = new System.Drawing.Point(0, 470);
             this.btnSaida.Name = "btnSaida";
-            this.btnSaida.Size = new System.Drawing.Size(122, 100);
+            this.btnSaida.Size = new System.Drawing.Size(197, 57);
             this.btnSaida.TabIndex = 7;
             this.btnSaida.Text = "Registrar Saída de Estoque";
             this.btnSaida.UseVisualStyleBackColor = true;
@@ -75,10 +81,11 @@ namespace SistemaControleEstoque
             // 
             // btnListagem
             // 
+            this.btnListagem.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnListagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListagem.Location = new System.Drawing.Point(200, 26);
+            this.btnListagem.Location = new System.Drawing.Point(0, 352);
             this.btnListagem.Name = "btnListagem";
-            this.btnListagem.Size = new System.Drawing.Size(122, 100);
+            this.btnListagem.Size = new System.Drawing.Size(197, 61);
             this.btnListagem.TabIndex = 6;
             this.btnListagem.Text = "Listar / Editar Produtos";
             this.btnListagem.UseVisualStyleBackColor = true;
@@ -86,10 +93,11 @@ namespace SistemaControleEstoque
             // 
             // btnCadastro
             // 
+            this.btnCadastro.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastro.Location = new System.Drawing.Point(33, 26);
+            this.btnCadastro.Location = new System.Drawing.Point(0, 288);
             this.btnCadastro.Name = "btnCadastro";
-            this.btnCadastro.Size = new System.Drawing.Size(122, 100);
+            this.btnCadastro.Size = new System.Drawing.Size(197, 64);
             this.btnCadastro.TabIndex = 5;
             this.btnCadastro.Text = "Cadastrar Novo Produto";
             this.btnCadastro.UseVisualStyleBackColor = true;
@@ -97,20 +105,22 @@ namespace SistemaControleEstoque
             // 
             // btnCategoria
             // 
+            this.btnCategoria.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategoria.Location = new System.Drawing.Point(349, 153);
+            this.btnCategoria.Location = new System.Drawing.Point(0, 413);
             this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(122, 100);
+            this.btnCategoria.Size = new System.Drawing.Size(197, 57);
             this.btnCategoria.TabIndex = 10;
             this.btnCategoria.Text = "Atualizar Categorias";
             this.btnCategoria.UseVisualStyleBackColor = true;
-             // 
+            // 
             // btnUsuarios
             // 
+            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Location = new System.Drawing.Point(200, 153);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 159);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(122, 100);
+            this.btnUsuarios.Size = new System.Drawing.Size(197, 66);
             this.btnUsuarios.TabIndex = 11;
             this.btnUsuarios.Text = "Gerenciar Usuários";
             this.btnUsuarios.UseVisualStyleBackColor = true;
@@ -119,7 +129,7 @@ namespace SistemaControleEstoque
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(346, 288);
+            this.lblUsuario.Location = new System.Drawing.Point(217, 9);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(0, 13);
             this.lblUsuario.TabIndex = 12;
@@ -127,27 +137,47 @@ namespace SistemaControleEstoque
             // lblUsNivel
             // 
             this.lblUsNivel.AutoSize = true;
-            this.lblUsNivel.Location = new System.Drawing.Point(345, 355);
+            this.lblUsNivel.Location = new System.Drawing.Point(216, 76);
             this.lblUsNivel.Name = "lblUsNivel";
             this.lblUsNivel.Size = new System.Drawing.Size(0, 13);
             this.lblUsNivel.TabIndex = 13;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Indigo;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.btnSairMenu);
+            this.panel1.Controls.Add(this.btnUsuarios);
+            this.panel1.Controls.Add(this.btnRelatorio);
+            this.panel1.Controls.Add(this.btnCadastro);
+            this.panel1.Controls.Add(this.btnListagem);
+            this.panel1.Controls.Add(this.btnCategoria);
+            this.panel1.Controls.Add(this.btnSaida);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(197, 527);
+            this.panel1.TabIndex = 14;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(197, 102);
+            this.panel2.TabIndex = 15;
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 403);
+            this.ClientSize = new System.Drawing.Size(770, 527);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblUsNivel);
             this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.btnUsuarios);
-            this.Controls.Add(this.btnCategoria);
-            this.Controls.Add(this.btnSairMenu);
-            this.Controls.Add(this.btnRelatorio);
-            this.Controls.Add(this.btnSaida);
-            this.Controls.Add(this.btnListagem);
-            this.Controls.Add(this.btnCadastro);
             this.Name = "FormMenu";
             this.Text = "FormMenu";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,5 +194,7 @@ namespace SistemaControleEstoque
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblUsNivel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
