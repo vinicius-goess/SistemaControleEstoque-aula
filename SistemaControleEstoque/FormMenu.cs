@@ -90,7 +90,9 @@ namespace SistemaControleEstoque
             FormCategorias frm = new FormCategorias();
             frm.ShowDialog();
         }
-
-     
+        private void btnFornecedores_Click(object sender, EventArgs e)
+        {
+            new FormListagemFornecedor(nivelAcesso).ShowDialog();
+        }
     }
 }

@@ -61,6 +61,8 @@ namespace SistemaControleEstoque
             // 
             // txtUsuario
             // 
+            this.txtUsuario.AccessibleDescription = "Campo onde você digita o seu nome de usuário";
+            this.txtUsuario.AccessibleName = "Insira o usuário";
             this.txtUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsuario.Location = new System.Drawing.Point(151, 59);
@@ -80,6 +82,8 @@ namespace SistemaControleEstoque
             // 
             // btnEntrar
             // 
+            this.btnEntrar.AccessibleDescription = "Botão de entrar no sistema após colocar usuário e senha";
+            this.btnEntrar.AccessibleName = "Entrar no sistema";
             this.btnEntrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

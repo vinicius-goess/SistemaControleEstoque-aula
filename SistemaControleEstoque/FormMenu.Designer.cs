@@ -41,10 +41,11 @@ namespace SistemaControleEstoque
             this.lblUsNivel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnFornecedores = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,7 +59,7 @@ namespace SistemaControleEstoque
             this.btnSairMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSairMenu.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSairMenu.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnSairMenu.Location = new System.Drawing.Point(0, 469);
+            this.btnSairMenu.Location = new System.Drawing.Point(0, 530);
             this.btnSairMenu.Name = "btnSairMenu";
             this.btnSairMenu.Size = new System.Drawing.Size(197, 58);
             this.btnSairMenu.TabIndex = 9;
@@ -72,7 +73,7 @@ namespace SistemaControleEstoque
             this.btnRelatorio.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnRelatorio.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRelatorio.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnRelatorio.Location = new System.Drawing.Point(0, 228);
+            this.btnRelatorio.Location = new System.Drawing.Point(0, 289);
             this.btnRelatorio.Name = "btnRelatorio";
             this.btnRelatorio.Size = new System.Drawing.Size(197, 63);
             this.btnRelatorio.TabIndex = 8;
@@ -86,7 +87,7 @@ namespace SistemaControleEstoque
             this.btnSaida.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSaida.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaida.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnSaida.Location = new System.Drawing.Point(0, 412);
+            this.btnSaida.Location = new System.Drawing.Point(0, 473);
             this.btnSaida.Name = "btnSaida";
             this.btnSaida.Size = new System.Drawing.Size(197, 57);
             this.btnSaida.TabIndex = 7;
@@ -100,7 +101,7 @@ namespace SistemaControleEstoque
             this.btnListagem.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnListagem.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListagem.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnListagem.Location = new System.Drawing.Point(0, 167);
+            this.btnListagem.Location = new System.Drawing.Point(0, 228);
             this.btnListagem.Name = "btnListagem";
             this.btnListagem.Size = new System.Drawing.Size(197, 61);
             this.btnListagem.TabIndex = 6;
@@ -114,7 +115,7 @@ namespace SistemaControleEstoque
             this.btnCadastro.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCadastro.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastro.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnCadastro.Location = new System.Drawing.Point(0, 291);
+            this.btnCadastro.Location = new System.Drawing.Point(0, 352);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(197, 64);
             this.btnCadastro.TabIndex = 5;
@@ -128,7 +129,7 @@ namespace SistemaControleEstoque
             this.btnCategoria.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCategoria.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategoria.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnCategoria.Location = new System.Drawing.Point(0, 355);
+            this.btnCategoria.Location = new System.Drawing.Point(0, 416);
             this.btnCategoria.Name = "btnCategoria";
             this.btnCategoria.Size = new System.Drawing.Size(197, 57);
             this.btnCategoria.TabIndex = 10;
@@ -142,7 +143,7 @@ namespace SistemaControleEstoque
             this.btnUsuarios.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.SystemColors.Highlight;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 101);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 162);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(197, 66);
             this.btnUsuarios.TabIndex = 11;
@@ -173,6 +174,7 @@ namespace SistemaControleEstoque
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.btnFornecedores);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnUsuarios);
             this.panel1.Controls.Add(this.btnListagem);
@@ -185,7 +187,7 @@ namespace SistemaControleEstoque
             this.panel1.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(197, 527);
+            this.panel1.Size = new System.Drawing.Size(197, 588);
             this.panel1.TabIndex = 14;
             // 
             // panel2
@@ -197,6 +199,13 @@ namespace SistemaControleEstoque
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(197, 102);
             this.panel2.TabIndex = 15;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(197, 101);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(573, 426);
+            this.panel4.TabIndex = 16;
             // 
             // pictureBox1
             // 
@@ -221,13 +230,6 @@ namespace SistemaControleEstoque
             this.panel3.Size = new System.Drawing.Size(573, 102);
             this.panel3.TabIndex = 15;
             // 
-            // panel4
-            // 
-            this.panel4.Location = new System.Drawing.Point(197, 101);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(573, 426);
-            this.panel4.TabIndex = 16;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Black;
@@ -235,16 +237,31 @@ namespace SistemaControleEstoque
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(197, 102);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(573, 425);
+            this.pictureBox2.Size = new System.Drawing.Size(573, 486);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
+            // 
+            // btnFornecedores
+            // 
+            this.btnFornecedores.BackColor = System.Drawing.Color.Black;
+            this.btnFornecedores.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnFornecedores.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFornecedores.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnFornecedores.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnFornecedores.Location = new System.Drawing.Point(0, 96);
+            this.btnFornecedores.Name = "btnFornecedores";
+            this.btnFornecedores.Size = new System.Drawing.Size(197, 66);
+            this.btnFornecedores.TabIndex = 16;
+            this.btnFornecedores.Text = "Fornecedores";
+            this.btnFornecedores.UseVisualStyleBackColor = false;
+            this.btnFornecedores.Click += new System.EventHandler(this.btnFornecedores_Click);
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 527);
+            this.ClientSize = new System.Drawing.Size(770, 588);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -277,5 +294,6 @@ namespace SistemaControleEstoque
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnFornecedores;
     }
 }
