@@ -40,6 +40,10 @@ namespace SistemaControleEstoque
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnMostrar = new System.Windows.Forms.Button();
+            this.lblSenhaConfirm = new System.Windows.Forms.Label();
+            this.txtSenhaConfirm = new System.Windows.Forms.TextBox();
+            this.lblForca = new System.Windows.Forms.Label();
+            this.pbForcaSenha = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // lblNome
@@ -93,12 +97,13 @@ namespace SistemaControleEstoque
             this.txtSenha.Size = new System.Drawing.Size(374, 20);
             this.txtSenha.TabIndex = 5;
             this.txtSenha.UseSystemPasswordChar = true;
+            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // lblNivel
             // 
             this.lblNivel.AutoSize = true;
             this.lblNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNivel.Location = new System.Drawing.Point(12, 254);
+            this.lblNivel.Location = new System.Drawing.Point(222, 422);
             this.lblNivel.Name = "lblNivel";
             this.lblNivel.Size = new System.Drawing.Size(168, 24);
             this.lblNivel.TabIndex = 6;
@@ -107,15 +112,15 @@ namespace SistemaControleEstoque
             // cmbNivel
             // 
             this.cmbNivel.FormattingEnabled = true;
-            this.cmbNivel.Location = new System.Drawing.Point(16, 295);
+            this.cmbNivel.Location = new System.Drawing.Point(226, 449);
             this.cmbNivel.Name = "cmbNivel";
-            this.cmbNivel.Size = new System.Drawing.Size(170, 21);
+            this.cmbNivel.Size = new System.Drawing.Size(164, 21);
             this.cmbNivel.TabIndex = 7;
             // 
             // btnSalvar
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(16, 355);
+            this.btnSalvar.Location = new System.Drawing.Point(12, 498);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(129, 86);
             this.btnSalvar.TabIndex = 8;
@@ -126,7 +131,7 @@ namespace SistemaControleEstoque
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(261, 355);
+            this.btnVoltar.Location = new System.Drawing.Point(261, 498);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(129, 86);
             this.btnVoltar.TabIndex = 9;
@@ -138,7 +143,7 @@ namespace SistemaControleEstoque
             // 
             this.btnMostrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrar.Location = new System.Drawing.Point(246, 241);
+            this.btnMostrar.Location = new System.Drawing.Point(246, 254);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(144, 31);
             this.btnMostrar.TabIndex = 10;
@@ -146,13 +151,51 @@ namespace SistemaControleEstoque
             this.btnMostrar.UseMnemonic = false;
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
-
+            // 
+            // lblSenhaConfirm
+            // 
+            this.lblSenhaConfirm.AutoSize = true;
+            this.lblSenhaConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenhaConfirm.Location = new System.Drawing.Point(12, 276);
+            this.lblSenhaConfirm.Name = "lblSenhaConfirm";
+            this.lblSenhaConfirm.Size = new System.Drawing.Size(172, 24);
+            this.lblSenhaConfirm.TabIndex = 11;
+            this.lblSenhaConfirm.Text = "Confirmar Senha:";
+            // 
+            // txtSenhaConfirm
+            // 
+            this.txtSenhaConfirm.Location = new System.Drawing.Point(16, 315);
+            this.txtSenhaConfirm.Name = "txtSenhaConfirm";
+            this.txtSenhaConfirm.Size = new System.Drawing.Size(374, 20);
+            this.txtSenhaConfirm.TabIndex = 12;
+            this.txtSenhaConfirm.UseSystemPasswordChar = true;
+            // 
+            // lblForca
+            // 
+            this.lblForca.AutoSize = true;
+            this.lblForca.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForca.Location = new System.Drawing.Point(12, 353);
+            this.lblForca.Name = "lblForca";
+            this.lblForca.Size = new System.Drawing.Size(165, 24);
+            this.lblForca.TabIndex = 13;
+            this.lblForca.Text = "Força da Senha:";
+            // 
+            // pbForcaSenha
+            // 
+            this.pbForcaSenha.Location = new System.Drawing.Point(16, 381);
+            this.pbForcaSenha.Name = "pbForcaSenha";
+            this.pbForcaSenha.Size = new System.Drawing.Size(374, 23);
+            this.pbForcaSenha.TabIndex = 14;
             // 
             // FormCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 477);
+            this.ClientSize = new System.Drawing.Size(423, 596);
+            this.Controls.Add(this.pbForcaSenha);
+            this.Controls.Add(this.lblForca);
+            this.Controls.Add(this.txtSenhaConfirm);
+            this.Controls.Add(this.lblSenhaConfirm);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnSalvar);
@@ -184,5 +227,9 @@ namespace SistemaControleEstoque
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnMostrar;
+        private System.Windows.Forms.Label lblSenhaConfirm;
+        private System.Windows.Forms.TextBox txtSenhaConfirm;
+        private System.Windows.Forms.Label lblForca;
+        private System.Windows.Forms.ProgressBar pbForcaSenha;
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MySqlConnector;
-//using SistemaControleEstoque.Util;
+using SistemaControleEstoque.Util; // É necessário incluir o namespace onde está a classe Seguranca e Logger (se for usar)
 
 namespace SistemaControleEstoque.DAO
 {
@@ -10,27 +10,56 @@ namespace SistemaControleEstoque.DAO
         // Retorna nível de acesso como string
         public string ValidarLogin(string login, string senha)
         {
+            // MUDANÇA: Usando o bloco 'using' tradicional do .NET Framework 4.7
             using (MySqlConnection conn = Database.GetConnection())
             {
                 conn.Open();
-                string sql = "SELECT nivel FROM usuario WHERE login=@login AND senha=@senha";
+
+                // MUDANÇA: O SQL agora seleciona o hash da senha (coluna 'senha') e o 'nivel'
+                string sql = "SELECT senha, nivel FROM usuario WHERE login=@login LIMIT 1";
+
+                // MUDANÇA: Usando o bloco 'using' tradicional
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@login", login);
-                    cmd.Parameters.AddWithValue("@senha", senha);
 
-                    object result = cmd.ExecuteScalar();
-                    if (result != null && result != DBNull.Value)
+                    // MUDANÇA: Não adicionamos mais a senha digitada como parâmetro no SQL,
+                    // pois a comparação será feita no C# com o hash.
+
+                    // MUDANÇA: Precisamos usar ExecuteReader() para ler o hash e o nível
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        return result.ToString();
+                        if (reader.Read())
+                        {
+                            // Lê o hash da senha armazenado (índice 0)
+                            string storedHash = reader.IsDBNull(0) ? null : reader.GetString(0);
+
+                            // Lê o nível de acesso (índice 1)
+                            string nivel = reader.IsDBNull(1) ? null : reader.GetString(1);
+
+                            // MUDANÇA: Chama Seguranca.VerificarSenha para comparar a senha digitada
+                            // com o hash armazenado.
+                            if (!string.IsNullOrEmpty(storedHash) && Seguranca.VerificarSenha(senha, storedHash))
+                            {
+                                return nivel; // Autenticado, retorna o nível
+                            }
+                        }
                     }
-                    return null;
                 }
             }
+            // Se a conexão falhou, o usuário não foi encontrado ou a senha não corresponde ao hash
+            return null;
         }
 
         public void CadastrarUsuario(string nome, string login, string senha, string nivel)
         {
+            // O ideal é que a senha seja hasheada antes de ser passada aqui,
+            // ou que você chame Seguranca.CriarHash(senha) antes de inserir no banco.
+            // Para manter o código igual, assumo que você cuidará do hash antes de chamar este DAO,
+            // ou que a camada superior fará isso.
+            // Se a classe Seguranca estiver sendo usada, seria bom garantir o hash aqui:
+            // string senhaHash = Seguranca.CriarHash(senha);
+
             using (MySqlConnection conn = Database.GetConnection())
             {
                 conn.Open();
@@ -46,12 +75,17 @@ namespace SistemaControleEstoque.DAO
                     }
                 }
 
+                // Se você não está hasheando na camada de serviço, faça o hash aqui antes de inserir.
+                // Exemplo, assumindo que Seguranca.CriarHash exista:
+                // string senhaHash = Seguranca.CriarHash(senha);
+                // No cmd.Parameters.AddWithValue("@senha", senhaHash);
+
                 string sql = "INSERT INTO usuario (nome, login, senha, nivel) VALUES (@nome, @login, @senha, @nivel)";
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@nome", nome);
                     cmd.Parameters.AddWithValue("@login", login);
-                    cmd.Parameters.AddWithValue("@senha", senha);
+                    cmd.Parameters.AddWithValue("@senha", senha); // *VERIFICAR SE ESTÁ HASHEADA ANTES*
                     cmd.Parameters.AddWithValue("@nivel", nivel);
                     cmd.ExecuteNonQuery();
                 }

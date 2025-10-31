@@ -8,8 +8,6 @@ using System.Windows.Forms;
 
 using SistemaControleEstoque.Util;
 
-//using SistemaControleEstoque.Util;
-
 
 namespace SistemaControleEstoque
 
