@@ -40,12 +40,12 @@ namespace SistemaControleEstoque
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblUsNivel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFornecedores = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnFornecedores = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -135,6 +135,7 @@ namespace SistemaControleEstoque
             this.btnCategoria.TabIndex = 10;
             this.btnCategoria.Text = "Atualizar Categorias";
             this.btnCategoria.UseVisualStyleBackColor = false;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategorias_Click);
             // 
             // btnUsuarios
             // 
@@ -190,6 +191,21 @@ namespace SistemaControleEstoque
             this.panel1.Size = new System.Drawing.Size(197, 588);
             this.panel1.TabIndex = 14;
             // 
+            // btnFornecedores
+            // 
+            this.btnFornecedores.BackColor = System.Drawing.Color.Black;
+            this.btnFornecedores.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnFornecedores.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFornecedores.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnFornecedores.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnFornecedores.Location = new System.Drawing.Point(0, 96);
+            this.btnFornecedores.Name = "btnFornecedores";
+            this.btnFornecedores.Size = new System.Drawing.Size(197, 66);
+            this.btnFornecedores.TabIndex = 16;
+            this.btnFornecedores.Text = "Fornecedores";
+            this.btnFornecedores.UseVisualStyleBackColor = false;
+            this.btnFornecedores.Click += new System.EventHandler(this.btnFornecedores_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel4);
@@ -241,21 +257,6 @@ namespace SistemaControleEstoque
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
-            // 
-            // btnFornecedores
-            // 
-            this.btnFornecedores.BackColor = System.Drawing.Color.Black;
-            this.btnFornecedores.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnFornecedores.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFornecedores.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnFornecedores.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnFornecedores.Location = new System.Drawing.Point(0, 96);
-            this.btnFornecedores.Name = "btnFornecedores";
-            this.btnFornecedores.Size = new System.Drawing.Size(197, 66);
-            this.btnFornecedores.TabIndex = 16;
-            this.btnFornecedores.Text = "Fornecedores";
-            this.btnFornecedores.UseVisualStyleBackColor = false;
-            this.btnFornecedores.Click += new System.EventHandler(this.btnFornecedores_Click);
             // 
             // FormMenu
             // 

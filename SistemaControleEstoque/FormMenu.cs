@@ -94,5 +94,7 @@ namespace SistemaControleEstoque
         {
             new FormListagemFornecedor(nivelAcesso).ShowDialog();
         }
+
+     
     }
 }
