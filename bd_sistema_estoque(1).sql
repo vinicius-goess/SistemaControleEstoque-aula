@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`idusuario`, `nome`, `login`, `senha`) VALUES
-(1, '', 'admin', '123');
+(1, '', 'admin', 'bMB1+5Gqd3gVooNRVjPdyB3nLog9SGzVDXHVZWDqMeGcSldk');
 
 --
 -- Restrições para despejos de tabelas
