@@ -136,8 +136,8 @@ CREATE TABLE IF NOT EXISTS `produto` (
 --
 
 INSERT INTO `produto` (`idproduto`, `nome_produto`, `descricao`, `quantidade`, `preco_custo`, `preco_venda`, `estoque_minimo`, `fk_categoria_idcategoria`) VALUES
-(1, 'ps5', 'Console de video game', 0, '0', '3500,00', 1, 6),
-(2, 'Maça', 'Fruta vermelha usada na maioria dos sucos industrializados', 96, '0', '0,96', 1, 1);
+(1, 'Placa de video', 'RTX 4060', 4, '2500,00', '3000,00', 1, 6),
+(2, 'Pasta térmica', 'Pasta térmica para GPU 5g', 20, '7,60', '14,99', 1, 1);
 
 -- --------------------------------------------------------
 
