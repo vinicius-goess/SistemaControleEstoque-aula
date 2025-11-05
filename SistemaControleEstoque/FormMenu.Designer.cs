@@ -55,6 +55,7 @@ namespace SistemaControleEstoque
             // 
             // btnSairMenu
             // 
+            this.btnSairMenu.AccessibleName = "sair do sistema";
             this.btnSairMenu.BackColor = System.Drawing.Color.Black;
             this.btnSairMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSairMenu.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -69,6 +70,7 @@ namespace SistemaControleEstoque
             // 
             // btnRelatorio
             // 
+            this.btnRelatorio.AccessibleName = "visualizar relatório";
             this.btnRelatorio.BackColor = System.Drawing.Color.Black;
             this.btnRelatorio.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnRelatorio.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,6 +85,7 @@ namespace SistemaControleEstoque
             // 
             // btnSaida
             // 
+            this.btnSaida.AccessibleName = "registrar saida do estoque";
             this.btnSaida.BackColor = System.Drawing.Color.Black;
             this.btnSaida.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSaida.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,6 +100,7 @@ namespace SistemaControleEstoque
             // 
             // btnListagem
             // 
+            this.btnListagem.AccessibleName = "listar ou editar produtos";
             this.btnListagem.BackColor = System.Drawing.Color.Black;
             this.btnListagem.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnListagem.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,6 +115,7 @@ namespace SistemaControleEstoque
             // 
             // btnCadastro
             // 
+            this.btnCadastro.AccessibleName = "cadastrar novo produto";
             this.btnCadastro.BackColor = System.Drawing.Color.Black;
             this.btnCadastro.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCadastro.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -125,6 +130,7 @@ namespace SistemaControleEstoque
             // 
             // btnCategoria
             // 
+            this.btnCategoria.AccessibleName = "atualizar categorias";
             this.btnCategoria.BackColor = System.Drawing.Color.Black;
             this.btnCategoria.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCategoria.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,6 +145,7 @@ namespace SistemaControleEstoque
             // 
             // btnUsuarios
             // 
+            this.btnUsuarios.AccessibleName = "gerenciar usuários";
             this.btnUsuarios.BackColor = System.Drawing.Color.Black;
             this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnUsuarios.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -193,6 +200,7 @@ namespace SistemaControleEstoque
             // 
             // btnFornecedores
             // 
+            this.btnFornecedores.AccessibleName = "fornecedores";
             this.btnFornecedores.BackColor = System.Drawing.Color.Black;
             this.btnFornecedores.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnFornecedores.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

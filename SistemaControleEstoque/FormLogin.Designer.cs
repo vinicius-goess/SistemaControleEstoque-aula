@@ -44,6 +44,7 @@ namespace SistemaControleEstoque
             // 
             // lblUsuario
             // 
+            this.lblUsuario.AccessibleName = "Usuário";
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.SystemColors.Highlight;
@@ -55,6 +56,7 @@ namespace SistemaControleEstoque
             // 
             // lblSenha
             // 
+            this.lblSenha.AccessibleName = "Senha";
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.SystemColors.Highlight;
@@ -77,6 +79,7 @@ namespace SistemaControleEstoque
             // 
             // txtSenha
             // 
+            this.txtSenha.AccessibleName = "Insira a senha";
             this.txtSenha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSenha.Location = new System.Drawing.Point(184, 126);
@@ -106,6 +109,7 @@ namespace SistemaControleEstoque
             // 
             // btnSair
             // 
+            this.btnSair.AccessibleName = "sair";
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -123,6 +127,7 @@ namespace SistemaControleEstoque
             // 
             // btnMostrar
             // 
+            this.btnMostrar.AccessibleName = "mostrar ou ocultar senha";
             this.btnMostrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -140,6 +145,7 @@ namespace SistemaControleEstoque
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.AccessibleName = "cadastrar usuário";
             this.btnCadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCadastrar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
